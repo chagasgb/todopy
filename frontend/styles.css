@@ -1,0 +1,281 @@
+/* Corpo da página */
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradê de cor do roxo para azul */
+  color: white; /* Cor do texto é branca */
+  font-family: 'Arial', sans-serif; /* A fonte utilizada é Arial */
+  padding: 20px; /* Adiciona 20px de espaçamento interno */
+  min-height: 100vh; /* Define altura mínima de 100% da altura da tela */
+  display: flex; /* Usa o modelo de layout flexível */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Container principal */
+.container {
+  background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo branca com transparência */
+  backdrop-filter: blur(10px); /* Aplica desfoque ao fundo do elemento */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao redor do container */
+  padding: 40px; /* Espaçamento interno de 40px */
+  width: 100%; /* Largura de 100% */
+  max-width: 700px; /* Largura máxima de 500px */
+}
+
+/* Título principal */
+h1 {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  font-size: 2rem; /* Define o tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: white; /* Cor do texto é branca */
+  text-transform: uppercase; /* Transforma o texto para maiúsculas */
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+}
+
+
+/* Grupo de entradas (inputs) */
+.input-group {
+  margin-bottom: 20px; /* Espaço abaixo de cada grupo de entrada */
+}
+
+/* Estilo para os campos de input */
+.form-control {
+  border: none; /* Remove a borda */
+  border-radius: 15px 0 0 15px; /* Bordas arredondadas, mas com um lado diferente */
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo branco com transparência */
+  color: white; /* Cor do texto branca */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Quando o input está focado */
+.form-control:focus {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5); /* Fica um pouco mais claro quando focado */
+  box-shadow: none; /* Remove qualquer sombra */
+}
+
+/* Estilo para o botão primário */
+.btn-primary {
+  border-radius: 0 15px 15px 0; /* Bordas arredondadas no lado oposto ao do input */
+  background: linear-gradient(135deg, #ff6f91, #ff9a9e); /* Degradê de cores para o fundo do botão */
+  border: none; /* Remove a borda */
+  color: white; /* Cor do texto branca */
+  font-weight: bold; /* Texto em negrito */
+  transition: transform 0.2s ease, background 0.3s ease; /* Transição suave para transformação e cor de fundo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave no botão */
+}
+
+/* Quando o botão primário é sobrevoado com o mouse */
+.btn-primary:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do botão */
+  background: linear-gradient(135deg, #ff9a9e, #ff6f91); /* Troca a ordem das cores do degradê */
+}
+
+/* Novo estilo para o botão de "Editar Tarefa" */
+.btn-edit {
+  border-radius: 10%; /* Tornando o botão arredondado */
+  background:rgba(23, 209, 48, 0.5);
+  border: none;
+  color: rgb(255, 255, 255); /* Cor do texto branca */
+  font-weight: normal; /* Texto em negrito */
+  padding: 5px 10px; /* Espaciamento adequado para o botão */
+  font-size: 1rem; /* Tamanho de fonte ajustado */
+  transition: transform 0.2s ease, background 0.3s ease; /* Transição suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave no botão */
+}
+.btn-edit:hover {
+  transform: scale(1.05); /* Efeito de aumentar o botão ao passar o mouse */
+  background: linear-gradient(135deg, #518b1b, #2b9743); /* Inverte as cores do fundo ao passar o mouse */
+}
+
+
+/* Lista de itens de tarefas */
+.todo-list {
+  list-style: none; /* Remove os marcadores padrão da lista */
+  padding: 0; /* Remove o padding da lista */
+}
+
+/* Estilo para cada item de tarefa */
+.todo-item {
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo do item com transparência */
+  border-radius: 10px; /* Bordas arredondadas */
+  margin-bottom: 10px; /* Espaço abaixo do item */
+  padding: 15px; /* Espaço interno */
+  display: flex; /* Usando flexbox */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  align-items: center; /* Alinha os itens no centro vertical */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  animation: fadeIn 0.5s ease-in-out; /* Animação de aparecimento */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave no item */
+}
+
+/* Quando o item de tarefa é sobrevoado com o mouse */
+.todo-item:hover {
+  transform: translateY(-3px); /* Move o item levemente para cima */
+  background-color: rgba(255, 255, 255, 0.2); /* Fica mais claro */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Estilo para o texto do item de tarefa */
+.todo-item span {
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  color: white; /* Cor do texto branca */
+  cursor: pointer; /* Cursor de mão ao passar por cima */
+  transition: text-decoration 0.3s ease, color 0.3s ease; /* Transição suave para decoração e cor */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+  flex-grow: 1; /* Faz com que o texto ocupe o espaço restante */
+}
+
+/* Quando o item de tarefa está concluído */
+.completed {
+  text-decoration: line-through; /* Texto com linha através */
+  color: rgba(255, 255, 255, 0.5); /* Cor do texto mais clara */
+  text-shadow: none; /* Remove a sombra */
+}
+
+/* Botões para remover ou marcar como concluído */
+.btn-remove, .btn-complete {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Degradê de cores para o fundo do botão */
+  border: none; /* Remove a borda */
+  color: white; /* Cor do texto branca */
+  padding: 8px 15px; /* Espaçamento interno */
+  border-radius: 50px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão */
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin-left: 10px; /* Espaço à esquerda */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Quando o botão é sobrevoado com o mouse */
+.btn-remove:hover, .btn-complete:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do botão */
+  background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Troca a ordem das cores do degradê */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Grupo de botões (remover e concluir) dentro de um item de tarefa */
+.todo-item .button-group {
+  display: flex; /* Usa o modelo flexível */
+  justify-content: space-between; /* Distribui os botões com espaço entre eles */
+  gap: 10px; /* Espaço entre os botões */
+}
+
+/* Animação de aparecimento para os itens de tarefa */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(20px); /* Começa com um deslocamento vertical */
+  }
+  to {
+    opacity: 1; /* Fica visível */
+    transform: translateY(0); /* Volta à posição original */
+  }
+}
+
+/* Estilo do rodapé */
+footer {
+  margin-top: 30px; /* Espaço acima do rodapé */
+  text-align: center; /* Centraliza o texto */
+  font-size: 14px; /* Tamanho da fonte */
+  color: rgba(255, 255, 255, 0.7); /* Cor do texto mais suave */
+}
+
+/* Estilo para links no rodapé */
+footer a {
+  color: white; /* Cor branca */
+  text-decoration: none; /* Remove a decoração de texto (sublinhado) */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Quando o link no rodapé é sobrevoado com o mouse */
+footer a:hover {
+  text-decoration: underline; /* Adiciona sublinhado */
+}
+
+/* Estilo para o conteúdo da modal */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo com transparência */
+  color: white; /* Cor do texto branca */
+  border: none; /* Remove a borda */
+  border-radius: 20px; /* Bordas arredondadas */
+  backdrop-filter: blur(10px); /* Aplica desfoque ao fundo da modal */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao redor da modal */
+}
+
+/* Cabeçalho da modal */
+.modal-header {
+  border-bottom: none; /* Remove a borda inferior */
+}
+
+/* Título da modal */
+.modal-title {
+  font-size: 1.5rem; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+}
+
+/* Estilo do botão de fechar da modal */
+.btn-close {
+  filter: invert(1); /* Inverte as cores */
+  transform: scale(1.2); /* Aumenta o tamanho */
+  transition: transform 0.2s ease; /* Transição suave para transformação */
+}
+
+/* Quando o botão de fechar é sobrevoado */
+.btn-close:hover {
+  transform: scale(1.3); /* Aumenta ainda mais o tamanho */
+}
+
+/* Corpo da modal */
+.modal-body {
+  font-size: 1rem; /* Tamanho da fonte */
+  color: rgba(255, 255, 255, 0.8); /* Cor do texto com um pouco de transparência */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra suave no texto */
+}
+
+/* Rodapé da modal */
+.modal-footer {
+  border-top: none; /* Remove a borda superior */
+}
+
+/* Botão secundário na modal */
+.modal-footer .btn-secondary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradê de cores */
+  border: none; /* Remove a borda */
+  color: white; /* Cor do texto branca */
+  font-weight: bold; /* Texto em negrito */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.2s ease, background 0.3s ease; /* Transições suaves */
+}
+
+/* Quando o botão secundário é sobrevoado */
+.modal-footer .btn-secondary:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do botão */
+  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Troca as cores do degradê */
+}
+
+/* Estilo para inputs e textareas dentro da modal */
+.modal-body input,
+.modal-body textarea {
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo com transparência */
+  color: white; /* Cor do texto branca */
+  border: none; /* Remove a borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px; /* Espaço interno */
+  width: 100%; /* Largura de 100% */
+  margin-bottom: 15px; /* Espaço abaixo */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Quando o input ou textarea está focado */
+.modal-body input:focus,
+.modal-body textarea:focus {
+  background-color: rgba(255, 255, 255, 0.3); /* Fica mais claro ao focar */
+  outline: none; /* Remove o contorno */
+}
