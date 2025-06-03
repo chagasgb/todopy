@@ -1,0 +1,8 @@
+
+services:
+  todo:
+    build:
+      context: .
+    container_name: todopy
+    ports:
+      - "8000:8000"
