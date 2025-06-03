@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = 'todopy-app'
+        CONTAINER_NAME = 'todopy-test'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/chagasgb/todopy', branch: 'main'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build -t $IMAGE_NAME ."
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Executa o container e roda os testes com pytest
+                    sh """
+                        docker run --rm --name $CONTAINER_NAME $IMAGE_NAME pytest
+                    """
+                }
+            }
+        }
+    }
+}
