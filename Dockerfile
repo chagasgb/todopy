@@ -1,9 +1,10 @@
 # Usa a imagem base oficial do Python 3.12 slim para manter o tamanho mínimo
 FROM python:3.12-slim
 
-WORKDIR /app
 
-COPY . .
+COPY . /app
+
+WORKDIR /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
