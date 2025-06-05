@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tarefas</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 8px; }
+        .completed { text-decoration: line-through; color: gray; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for task in tasks %}
+            <li class="{{ 'completed' if task.completed else '' }}">
+                {{ task.description }}
+                <form style="display:inline" method="post" action="/delete">
+                    <input type="hidden" name="task_id" value="{{ task.id }}">
+                    <button type="submit">Remover</button>
+                </form>
+                {% if not task.completed %}
+                    <form style="display:inline" method="post" action="/complete">
+                        <input type="hidden" name="task_id" value="{{ task.id }}">
+                        <button type="submit">Completar</button>
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="/add">
+        <input type="text" name="description" placeholder="Nova tarefa" required>
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
