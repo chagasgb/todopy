@@ -1,6 +1,9 @@
 # Usa a imagem base oficial do Python 3.12 slim para manter o tamanho mínimo
 FROM python:3.12-slim
 
+ENV http_proxy=http://prxdf.prevnet:3128
+ENV https_proxy=http://prxdf.prevnet:3128
+
 COPY . /app
 
 WORKDIR /app
